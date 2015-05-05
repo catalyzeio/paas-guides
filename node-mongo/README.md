@@ -123,15 +123,11 @@ No need to talk to Catalyze - the redeploy will happen automatically if the buil
 
 ## Working with Logs
 
-In the Catalyze dashboard, the temporary URL for the application is visible on $screen:
+In the Catalyze dashboard, when you select your environment from the left sidebar, a button is available to access an exposed Kibana + ElasticSearch interface.
 
-> TODO screenshot
+![dashboard screenshot](./logging-button.png)
 
-Using this URL, a Kibana + ElasticSearch interface is exposed at `/log`.
-
-> TODO screenshot
-
-TODO link to ELK docs
+Docs and guides for ElasticSearch and Kibana can be found [here](http://www.elastic.co/guide/).
 
 
 ## Redeploying with Log Integration
