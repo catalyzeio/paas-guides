@@ -19,8 +19,6 @@ Local testing of your application can be done by following the instructions here
 
 The examples below assume you have a contract with Catalyze and have an environment ID that was provisioned by Catalyze Support.
 
-# Environment Provisioning
-
 # Using the CLI
 
 ## Associating your code
