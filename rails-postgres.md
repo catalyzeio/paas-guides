@@ -3,6 +3,7 @@
 
 ## Introduction
 
+
 ## Setting up your local Rails app
 
 
@@ -26,3 +27,8 @@
 
 ## Pushing your updated app to the Catalyze platform
 
+
+
+[1]: http://example.org 	"Onboarding Guide"
+[2]: http://example1.org 	"CLI Guide"
+[3]: http://example2.org 	"Git repo"
