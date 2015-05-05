@@ -2,6 +2,19 @@
 
 # Prerequisites
 
+## Tools
+To get started with Catalyze and PHP-MySQL, you will need the following tools:
+* [git](http://git-scm.com/)
+* [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli)
+
+## Sample Application
+
+The examples below can be found [here](https://github.com/catalyzeio/php-example-app).  Fork and clone the example application to create your own working copy to deploy to Catalyze. 
+
+## Local Testing
+
+Local testing of your application can be done by following the instructions here.
+
 # Environment Provisioning
 
 # Using the CLI
