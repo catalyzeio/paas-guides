@@ -66,18 +66,11 @@ $ git push catalyze master
 ```
 
 ## Preparing PostgreSQL for your application
-While you are waiting for Catalyze to complete your initial deployment, you can set up your database and run appropriate migrations so that your application can connect to PostgreSQL. The [Catalyze PaaS CLI][8] can be used to connect to your database and run commands. Below is an example of how to create a database on PostgreSQL. Make sure you change the value of YOUR_DATABASE_NAME to the actual name of the database you want to connect to. Note: your database service may be named something other than "db01" if you changed it in the Catalyze Dashboard.
+While you are waiting for Catalyze to complete your initial deployment, you can set up your database and run appropriate migrations so that your application can connect to PostgreSQL. The [Catalyze PaaS CLI][8] can be used to connect to your database and run commands. Below is an example of how to run db:setup on PostgreSQL to create your database, tables, etc. Make sure you change the value of YOUR_DATABASE_NAME to the actual name of the database you want to connect to. Note: your database service may be named something other than "db01" if you changed it in the Catalyze Dashboard.
 
 ```
 $ catalyze console db01
-$ CREATE DATABASE YOUR_DATABASE_NAME
-```
-
-Below is an example of how to run standard Rails database migrations using the Catalyze PaaS CLI.
-Once your database is created, you can close the connection to your database service and run database migrations.
-
-```
-$ catalyze rake db:migrate RAILS_ENV=production
+$ catalyze rake db:setup RAILS_ENV=production
 ```
 
 [1]: https://resources.catalyze.io/paas/getting-started/ 	"Onboarding Guide"
