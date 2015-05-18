@@ -20,8 +20,8 @@ Local testing of your application can be done by following the instructions here
 The examples below assume you have a contract with Catalyze and have an environment that was provisioned by Catalyze Support.
 
 Terms
-* Environment ID: a GUID assigned to your environment by Catalyze. Eg:  9cdde031-5342-4a0d-949c-31253227bd12
-* Environment Label: a name YOU picked for your environment.  Eg: MyHealthApp-Production
+* Environment ID: a GUID assigned to your environment by Catalyze. Eg:  `9cdde031-5342-4a0d-949c-31253227bd12`
+* Environment Label: a name YOU picked for your environment.  Eg: `MyHealthApp-Production`
 
 # Using the CLI
 
@@ -29,7 +29,7 @@ Terms
 
 Make sure you have [git](http://git-scm.com/) and [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) installed and your environment lable ready.
 
-Change directory to a working copy of your code or a fork of the [example application](https://github.com/catalyzeio/php-example-app) and run the following commands: 
+Change directory to a working copy of your code or a fork of the [example application](https://github.com/catalyzeio/php-example-app) and run the following commands, entering your Catalyze username and password when prompted: 
 
 ```
 # catalyze associate MyHealthApp-Production
@@ -53,6 +53,22 @@ origin	https://github.com/catalyzeio/php-example-app.git (push)
 Your remotes will be unique to your origin and environment.
 
 ## Deploying your code for the first time
+
+Ensure your code has a [Procfile](https://github.com/catalyzeio/php-example-app/blob/master/Procfile).  This file tells Catalyze 
+
+The first time that you push your code to Catalyze, we require that you notify support@catalyze.io that you have pushed code and that your application finished building successfully. We will let you know when your application has finished the initial deployment. After the initial deployment, every time code is pushed to Catalyze using the command below, the application will be updated automatically.
+
+To push your code to Catalyze, simply run the command below from within your working copy:
+
+```
+# git push catalyze master
+... Lots of Build Output Here ...
+remote: ---> XXXXXXX
+remote: Finalizing Build (Note: This can take a few minutes to complete)....................................................
+remote: Complete. Built Successfully!
+#
+```
+
 
 ## Modifying Environment Variables
 
