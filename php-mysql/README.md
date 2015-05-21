@@ -25,7 +25,10 @@ Some basic terms that you should know:
 
 
 ## Setting up your local php application using Laravel
-Lets get your php application setup for deployment. If you are deploying the example application you can skip ahead. For this example we are using the [Laravel](http://laravel.com) framework. To setup Laravel, follow the directions on their documentation [here](http://laravel.com/docs/5.0).
+Lets get your php application setup for deployment. For this example we are using the [Laravel](http://laravel.com) framework. To setup a new project of Laravel, follow the directions on their documentation [here](http://laravel.com/docs/5.0). Otherwise the example application should be good to go right out of the box.
+
+### Developing locally
+To run the example application locally, you can use the Homestead vagrant image which is pretty easy to setup. You can find more information on [Homestead here](http://laravel.com/docs/5.0/homestead).
 
 
 ## Associate environment to application
@@ -119,8 +122,15 @@ Now your database settings will be automatically picked up when deployed on Cata
 ## Using environment variables
 Using environment varaibles in php and Laravel is pretty straight forward. Just use the `getenv()` function any where you need to access an environment varaible. You can find more documentaiton on the `getenv()` function [here](http://php.net/manual/en/function.getenv.php).
 
-## Creating schema for database
+### Example
+`$databaseUrl = getenv("DATABASE_URL");`
 
+## Creating schema for database
+You can use the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) to run migrations on the MySQL database easily. Just run the following command below to populate MySQL with the proper tables for the example application. If you are creating your own application, you can find more information [here](http://laravel.com/docs/5.0/migrations) on migrations with Laravel.
+
+### Example
+
+`$ catalyze artisan migrate`
 
 ## Redeploying
 After the initial deployment of the application on Catalyze, it's pretty easy to update your code. Just do another `git push`:
@@ -136,3 +146,42 @@ remote: Complete. Built Successfully!
 
 
 ## Add logging to your php application
+Logging works easily right out of the box with Laravel. To Enable logging that works with Catalyze, you just need to edit the `/config/app.php` config file.
+
+Just look for this in the app.php config file:
+
+```
+/*
+|--------------------------------------------------------------------------
+| Logging Configuration
+|--------------------------------------------------------------------------
+|
+| Here you may configure the log settings for your application. Out of
+| the box, Laravel uses the Monolog PHP logging library. This gives
+| you a variety of powerful log handlers / formatters to utilize.
+|
+| Available Settings: "single", "daily", "syslog", "errorlog"
+|
+*/
+
+'log' => 'daily',
+```
+
+You just need to change the value from `daily` to `syslog` and you should be all set. Below is an example on how to send information to logging within your Laravel application.
+
+### Example
+
+```
+Log::info('This is some useful information.');
+
+Log::warning('Something could be going wrong.');
+
+Log::error('Something is really going wrong.');
+```
+
+If you would like more information on logging and laravel you can go [here](http://laravel.com/docs/5.0/errors).
+
+
+Additional for using php standalone with no framework you can use the `syslog()` function. More information on that can be found [here](http://php.net/manual/en/function.syslog.php).
+
+
