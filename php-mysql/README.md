@@ -125,6 +125,34 @@ Using environment varaibles in php and Laravel is pretty straight forward. Just 
 ### Example
 `$databaseUrl = getenv("DATABASE_URL");`
 
+### Updating Environment Variables
+When updating your environment variables, there are a coupel ways you can accomplish this. You can update them using the [Catalyze Dashboard](https://dashboard.catalyze.io), or using the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli).
+
+---
+
+#### Catalyze Dashboard
+Using the dashboard is the easiest of thw ways. Just sign into the [Dashboard](https://dashboard.catalyze.io/signin). Than procede to the [Environments](http://dashboard.catalyze.io/environments) section. Depending on if your environment is provisioned or not. The nexxt few steps will be different. Once on the environments dashboard, just click on your environment in the left hand navigation.
+
+##### Pre Provision
+If your environemnt is not provisioned yet, you may edit all properties of it within the dashbaord. Just navigate to the "Services Config" tab and edit your environment variables as you see fit.
+
+##### Post Provision
+Once your environment has been provisioned the process is a little different. Once you navigate to your environment within the dashboard. You will see 
+
+---
+
+#### Catalyze CLI
+The [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) makes it pretty straight forward for updating environment variables. Just change into the local directory of your project and use the following commands. For more information on using the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli), head over to the [documentation](https://resources.catalyze.io/paas/cli/sections/vars/).
+
+##### List all Variables
+`catalyze vars list`
+
+##### Adding
+`catalyze vars set A=B`
+
+##### Removing
+`catalyze vars unset A`
+
 ## Creating schema for database
 You can use the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) to run migrations on the MySQL database easily. Just run the following command below to populate MySQL with the proper tables for the example application. If you are creating your own application, you can find more information [here](http://laravel.com/docs/5.0/migrations) on migrations with Laravel.
 
@@ -184,4 +212,6 @@ If you would like more information on logging and laravel you can go [here](http
 
 Additional for using php standalone with no framework you can use the `syslog()` function. More information on that can be found [here](http://php.net/manual/en/function.syslog.php).
 
+### Viewing Logs
+Once your application is logging, you can view those logs using the dashboard. Just sign into the [Catalyze Dashboard](https://dashboard.catalyze.io), navigate to the environments dashboard, and click on "Monitoring" or "Logging" on any environment within your dashboard.
 
