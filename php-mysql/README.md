@@ -2,7 +2,7 @@
 ===
 
 ## Introduction
-This guide will cover the basics of deploying a PHP app built using the [Laravel](http://laravel.com) framework that stores data in a MySQL database. We have already created an example application using these steps [here](https://github.com/catalyzeio/php-example-app). Feel free to follow this guide or, fork and clone the example application to create your own working copy to deploy to Catalyze.
+This guide will cover the basics of deploying a PHP app built using the [Laravel](http://laravel.com) framework that stores data in a MySQL database. We have already created an example application using these steps [here](https://github.com/catalyzeio/php-example-app). Feel free to follow this guide or fork and clone the example application to create your own working copy to deploy to Catalyze.
 
 
 ## Prerequisites
@@ -15,7 +15,7 @@ We assume you have base knowledge of the following tools, and installed. If not,
 - [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli)
 
 ### Contract with Catalyze
-You will need to have a contract with [Catalyze](https://catalyze.io/) signed, and already have an environment provisioned for use. If you need to sign up for Catalyze you can [start here](https://catalyze.io/signup/paas).
+You need a signed contract with [Catalyze](https://catalyze.io/), and already have an environment provisioned for use. If you need to sign up for Catalyze you can [start here](https://catalyze.io/signup/paas).
 
 ### Terms to know
 Some basic terms that you should know:
@@ -25,11 +25,10 @@ Some basic terms that you should know:
 
 
 ## Setting up your local php application using Laravel
-Lets get your php application setup for deployment. For this example we are using the [Laravel](http://laravel.com) framework. To setup a new project of Laravel, follow the directions on their documentation [here](http://laravel.com/docs/5.0). Otherwise the example application should be good to go right out of the box.
+Lets get your php application setup for deployment. For this example we are using the [Laravel](http://laravel.com) framework. To setup a new Laravel project, follow the directions on their documentation [here](http://laravel.com/docs/5.0). Otherwise the example application should be good to go right out of the box.
 
 ### Developing locally
 To run the example application locally, you can use the Homestead vagrant image which is pretty easy to setup. You can find more information on [Homestead here](http://laravel.com/docs/5.0/homestead).
-
 
 ## Associate environment to application
 We need to associate your Catalyze environment to your Laravel application. To do this you need to use [git](http://git-scm.com/) and the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli).
@@ -57,9 +56,8 @@ origin  https://github.com/catalyzeio/php-example-app.git (push)
 
 Your remotes will be unique to your origin and enivornment on Catalyze.
 
-
 ## Deploying your code
-The first time that you push your code to Catalyze, we require that you notify [support@catalyze.io](mailto:support@catalyze.io) that you have pushed code and your application finished building successfully. 
+The first time  you push your code to Catalyze, we require that you notify [support@catalyze.io](mailto:support@catalyze.io) that you have pushed code and your application finished building successfully. 
 
 Once the initial deployment has finished, we will notify you that it has completed. After the initial deployment, every subsequent time code is pushed to Catalyze using the command below, the application will be updated automatically.
 
@@ -68,7 +66,7 @@ Once the initial deployment has finished, we will notify you that it has complet
 ### Deployment
 So now that we have everything in order, lets deploy your application to Catalyze.
 
-Run the command below from within your working copy. This will push y our code up to Catalyze and start the buidl process.
+Run the command below from within your working copy. This will push  our code up to Catalyze and start the build process.
 
 ```
 # git push catalyze master
@@ -118,7 +116,6 @@ Then find the MySQL config options further down in database.php and edit the hos
 
 Now your database settings will be automatically picked up when deployed on Catalyze or read from the `.env` file when developing locally.
 
-
 ## Using environment variables
 Using environment varaibles in php and Laravel is pretty straight forward. Just use the `getenv()` function any where you need to access an environment varaible. You can find more documentaiton on the `getenv()` function [here](http://php.net/manual/en/function.getenv.php).
 
@@ -126,12 +123,12 @@ Using environment varaibles in php and Laravel is pretty straight forward. Just 
 `$databaseUrl = getenv("DATABASE_URL");`
 
 ### Updating Environment Variables
-When updating your environment variables, there are a coupel ways you can accomplish this. You can update them using the [Catalyze Dashboard](https://dashboard.catalyze.io), or using the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli).
+When updating your environment variables, there are a couple ways you can accomplish this. You can update them using the [Catalyze Dashboard](https://dashboard.catalyze.io), or using the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli).
 
 ---
 
 #### Catalyze Dashboard
-Using the dashboard is the easiest of thw ways. Just sign into the [Dashboard](https://dashboard.catalyze.io/signin). Than procede to the [Environments](http://dashboard.catalyze.io/environments) section. Depending on if your environment is provisioned or not. The nexxt few steps will be different. Once on the environments dashboard, just click on your environment in the left hand navigation.
+Using the dashboard is the easiest of the two. Just sign into the [Dashboard](https://dashboard.catalyze.io/signin). Then procede to the [Environments](http://dashboard.catalyze.io/environments) section. The next few steps will be different depending on if your environment is provisioned. Once on the environments dashboard, just click on your environment in the left hand navigation.
 
 ##### Pre Provision
 If your environemnt is not provisioned yet, you may edit all properties of it within the dashbaord. Just navigate to the "Services Config" tab and edit your environment variables as you see fit.
@@ -172,11 +169,10 @@ remote: Complete. Built Successfully!
 #
 ```
 
-
 ## Add logging to your php application
-Logging works easily right out of the box with Laravel. To Enable logging that works with Catalyze, you just need to edit the `/config/app.php` config file.
+Logging works easily right out of the box with Laravel. To Enable logging that works with Catalyze, you need to edit the `/config/app.php` config file.
 
-Just look for this in the app.php config file:
+Look for this in the app.php config file:
 
 ```
 /*
@@ -195,7 +191,7 @@ Just look for this in the app.php config file:
 'log' => 'daily',
 ```
 
-You just need to change the value from `daily` to `syslog` and you should be all set. Below is an example on how to send information to logging within your Laravel application.
+You need to change the value from `daily` to `syslog` and you should be all set. Below is an example on how to send information to logging within your Laravel application.
 
 ### Example
 
@@ -209,9 +205,7 @@ Log::error('Something is really going wrong.');
 
 If you would like more information on logging and laravel you can go [here](http://laravel.com/docs/5.0/errors).
 
-
-Additional for using php standalone with no framework you can use the `syslog()` function. More information on that can be found [here](http://php.net/manual/en/function.syslog.php).
+Additionally, for using php standalone with no framework, you can use the `syslog()` function. More information on that can be found [here](http://php.net/manual/en/function.syslog.php).
 
 ### Viewing Logs
 Once your application is logging, you can view those logs using the dashboard. Just sign into the [Catalyze Dashboard](https://dashboard.catalyze.io), navigate to the environments dashboard, and click on "Monitoring" or "Logging" on any environment within your dashboard.
-
