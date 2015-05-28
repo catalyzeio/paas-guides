@@ -151,11 +151,45 @@ The [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) makes it pre
 `catalyze vars unset A`
 
 ## Creating schema for database
-You can use the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) to run migrations on the MySQL database easily. Just run the following command below to populate MySQL with the proper tables for the example application. If you are creating your own application, you can find more information [here](http://laravel.com/docs/5.0/migrations) on migrations with Laravel.
+You can use the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) to run migrations on the MySQL database easily. Just run the following commands below to populate MySQL with the proper tables for the example application. If you are creating your own application, you can find more information [here](http://laravel.com/docs/5.0/migrations) on migrations with Laravel.
 
 ### Example
+First we need to find the label for the application service. The following will return a list of all services associated to your environment:
 
-`$ catalyze artisan migrate`
+`catalyze status`
+
+You should see some output like:
+
+```
+Overriding BaaS URL: https://api-staging.catalyze.io
+Overriding PaaS URL: https://api-sbox05.catalyzeapps.com:7443
+environment state: running
+	app01 (size = c0, build status = finished, deploy status = running)
+	db01 (size = c1, image = percona, status = running)
+```
+
+The first item in the list is the application service `app01`. We will target `app01` and send a command to it so we can run the migration in the example app.
+
+`catalyze console app01 'php artisan migrate --force'`
+
+That should give you a similar output as:
+
+```
+Opening console to service 'ee1af29c-5555-5555-5555-8e4ec6a6666a'
+Waiting for the console to be ready... This might take a bit.
+.................................................Connecting...
+Connection opened
+Migration table created successfully.
+Migrated: 2014_10_12_000000_create_users_table
+Migrated: 2014_10_12_100000_create_password_resets_table
+Migrated: 2015_05_05_174234_create_visitors_table
+loproxy: stopped
+Connection closed: Going away (1006))
+Cleaning up
+```
+
+As you can see, the migrations have run, and the database is setup for the example application.
+
 
 ## Redeploying
 After the initial deployment of the application on Catalyze, it's pretty easy to update your code. Just do another `git push`:
