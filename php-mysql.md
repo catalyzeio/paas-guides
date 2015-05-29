@@ -3,7 +3,6 @@ title: PHP + MySQL Guide
 ---
 
 # Deploying a PHP+MySQL Application on the Catalyze Platform
-===
 
 ## Introduction
 This guide will cover the basics of deploying a PHP app built using the [Laravel](http://laravel.com) framework that stores data in a MySQL database. We have already created an example application using these steps [here](https://github.com/catalyzeio/php-example-app). Feel free to follow this guide or fork and clone the example application to create your own working copy to deploy to Catalyze.
@@ -134,24 +133,24 @@ When updating your environment variables, there are a couple ways you can accomp
 #### Catalyze Dashboard
 Using the dashboard is the easiest of the two. Just sign into the [Dashboard](https://dashboard.catalyze.io/signin). Then procede to the [Environments](http://dashboard.catalyze.io/environments) section. The next few steps will be different depending on if your environment is provisioned. Once on the environments dashboard, just click on your environment in the left hand navigation.
 
-##### Pre Provision
+#### Pre Provision
 If your environemnt is not provisioned yet, you may edit all properties of it within the dashbaord. Just navigate to the "Services Config" tab and edit your environment variables as you see fit.
 
-##### Post Provision
-Once your environment has been provisioned the process is a little different. Once you navigate to your environment within the dashboard. You will see 
+#### Post Provision
+Once your environment has been provisioned the process is a little different. Once you navigate to your environment within the dashboard. You will see
 
 ---
 
 #### Catalyze CLI
 The [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) makes it pretty straight forward for updating environment variables. Just change into the local directory of your project and use the following commands. For more information on using the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli), head over to the [documentation](https://resources.catalyze.io/paas/cli/sections/vars/).
 
-##### List all Variables
+#### List all Variables
 `catalyze vars list`
 
-##### Adding
+#### Adding
 `catalyze vars set A=B`
 
-##### Removing
+#### Removing
 `catalyze vars unset A`
 
 ## Creating schema for database

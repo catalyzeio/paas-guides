@@ -212,7 +212,7 @@ No need to talk to Catalyze - the redeploy will happen automatically if the buil
 
 In the Catalyze dashboard, when you select your environment from the left sidebar, a button is available to access an exposed Kibana + ElasticSearch interface.
 
-![dashboard screenshot](//cdn2.dropmark.com/45280/65a396d67787a5b0c9fcab9ae61b2687fb3d0d93/logging-button.png)
+![dashboard screenshot](http://cdn2.dropmark.com/45280/65a396d67787a5b0c9fcab9ae61b2687fb3d0d93/logging-button.png)
 
 Docs and guides for ElasticSearch and Kibana can be found [here](http://www.elastic.co/guide/).
 
