@@ -1,5 +1,5 @@
 ---
-title: Rails + Postgrs Guide
+title: Rails + Postgres Guide
 ---
 
 # Catalyze Rails - PostgreSQL Guide
