@@ -1,3 +1,7 @@
+---
+title: Node JS and MongoDB Guide
+---
+
 # Deploying a Node+Mongo Application on the Catalyze Platform
 
 In this guide we will cover how to deploy a simple [Node.js](https://nodejs.org/) application that stores data in a [MongoDB database](https://www.mongodb.org/).
