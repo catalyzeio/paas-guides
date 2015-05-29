@@ -79,19 +79,19 @@ To get started we will create a simple Node.js application using the [Express fr
 
 5. Create a new Git repo and add your new files.
 
-```
-  $ git init
-  Initialized empty Git repository in /some/path/test/.git/
-  $ echo node_modules > .gitignore
-  $ git add .gitignore index.js package.json Procfile
-  $ git commit -m "Initial commit"
-  [master (root-commit) f90c88b] Initial commit
-  4 files changed, 35 insertions(+)
-  create mode 100644 .gitignore
-  create mode 100644 Procfile
-  create mode 100644 index.js
-  create mode 100644 package.json
-```
+   ```
+     $ git init
+     Initialized empty Git repository in /some/path/test/.git/
+     $ echo node_modules > .gitignore
+     $ git add .gitignore index.js package.json Procfile
+     $ git commit -m "Initial commit"
+     [master (root-commit) f90c88b] Initial commit
+      4 files changed, 35 insertions(+)
+      create mode 100644 .gitignore
+      create mode 100644 Procfile
+      create mode 100644 index.js
+      create mode 100644 package.json
+    ```
 
 ## Building and Deploying the Application
 
