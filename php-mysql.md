@@ -1,5 +1,5 @@
 ---
-title: PHP and MySQL Guide
+title: PHP + MySQL Guide
 ---
 
 # Deploying a PHP+MySQL Application on the Catalyze Platform

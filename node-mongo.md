@@ -1,5 +1,5 @@
 ---
-title: Node JS and MongoDB Guide
+title: Node + MongoDB Guide
 ---
 
 # Deploying a Node+Mongo Application on the Catalyze Platform
