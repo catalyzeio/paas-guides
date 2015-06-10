@@ -2,7 +2,7 @@
 title: Logging Guide
 ---
 
-# Getting started with logging
+# Getting started with logging in the Catalyze Platform
 
 ## Synopsis
 Logging is an essential part HIPAA compliance, and the following sections of HIPAA apply directly to logging.  
