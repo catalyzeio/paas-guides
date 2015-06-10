@@ -36,14 +36,16 @@ LOGGING = {
 }
 ```
 #### Node and MongoDB
-See [Node + MongoDB Guide](https://resources.catalyze.io/paas/paas-guides/node-mongo/). Insert ```console.log() ```whenever you want to log something.  
+See [Node + MongoDB Guide](https://resources.catalyze.io/paas/paas-guides/node-mongo/). 
+
+Insert ```console.log() ```whenever you want to log something.  
 For example:
 ```
 console.log('I want to log this thing!');
 ```
 
 #### PHP, MySQL and Laravel
-See [PHP + MySQL Guide](https://resources.catalyze.io/paas/paas-guides/php-mysql/).:
+See [PHP + MySQL Guide](https://resources.catalyze.io/paas/paas-guides/php-mysql/).
 
 Logging works easily right out of the box with Laravel. To Enable logging that works with Catalyze, you just need to edit the /config/app.php config file.
 
@@ -73,6 +75,7 @@ More information on logging using Laravel can be found [here](http://laravel.com
 
 #### Ruby on Rails and PostgresSQL
 See [Rails + Postgres Guide](https://resources.catalyze.io/paas/paas-guides/rails-postgres/). 
+
 You can create a new logger to standard output:
 ```
 log = Logger.new(STDOUT)
