@@ -1,3 +1,6 @@
+---
+title: Logging Guide
+---
 
 # Getting started with logging in the Catalyze Platform
 
@@ -18,7 +21,7 @@ You have a provisioned environment with a deployed application by following one 
 ## Shipping your application logs
 
 #### Python, PostgresSQL and Django
-See ([link to Postgres Python demo]) Add this code snippet to settings.py: 
+Add this code snippet to settings.py: 
 ```
 #settings.py
 LOGGING = {
@@ -33,14 +36,14 @@ LOGGING = {
 }
 ```
 #### Node and MongoDB
-See([link to Node + Mongo demo]) Insert ```console.log() ```whenever you want to log something.  
+See [Node + MongoDB Guide](https://resources.catalyze.io/paas/paas-guides/node-mongo/). Insert ```console.log() ```whenever you want to log something.  
 For example:
 ```
 console.log('I want to log this thing!');
 ```
 
 #### PHP, MySQL and Laravel
-See([link to PHP + MySQL demo]):
+See [PHP + MySQL Guide](https://resources.catalyze.io/paas/paas-guides/php-mysql/).:
 
 Logging works easily right out of the box with Laravel. To Enable logging that works with Catalyze, you just need to edit the /config/app.php config file.
 
@@ -69,7 +72,8 @@ Log::error('Something is really going wrong.');
 More information on logging using Laravel can be found [here](http://laravel.com/docs/5.0/errors).
 
 #### Ruby on Rails and PostgresSQL
-See([link to Ruby + Postgres demo]) create a new logger to standard output:
+See [Rails + Postgres Guide](https://resources.catalyze.io/paas/paas-guides/rails-postgres/). 
+You can create a new logger to standard output:
 ```
 log = Logger.new(STDOUT)
 ```
@@ -77,7 +81,7 @@ Or standard error:
 ```
 log = Logger.new(STERR)
 ```
-You can log debug messages,  info, or warnings.
+You can also log debug messages, info, or warnings.
 ```
 log.debug("Created logger")
 log.info("Program started")
@@ -100,9 +104,9 @@ For example:
 Your dashboard will look something like this.
 ![Logging Dashboard](https://catalyze.box.com/shared/static/b5cn6i4y9uy02ubj9g67qy5upxxe3y03.png)
 ## Searching and Filtering
-Use the search bar at the top of the page to search for logs.  For example:
+Use the search bar at the top of the page to search for logs.  For example, to filter application logs you can use the query:
 ```
- syslog_program : redis
+ syslog_program : supervisord
 ```
 ![Logging Query Example](https://catalyze.box.com/shared/static/8obuino907zpdhcivage9awn11zctct1.png)
 
