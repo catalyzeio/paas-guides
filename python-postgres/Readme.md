@@ -8,25 +8,27 @@ If you're used to other Platform as a Service offerings (Heroku, Google App Engi
 
 This guide is supplemental to the Django tutorials but will emphasize the key parts to get your app running on the Catalyze Platform. We have developed a sample application that you can also reference throughout the guide and as we walkthrough deploying an application. You can find the [Python Sample App on GitHub](https://github.com/catalyzeio/python-sample-app).
 
+> **Note:** This tutorial uses the Catalyze Console preview feature, currently available for staging environments. Contact support@catalyze.io to find out more about how you can get early access to upcoming features.
+
 ## Pre-requisites
 
-*You have a PaaS account with Catalyze*
+***You have a Platform account with Catalyze***
 
-If you don't, you can sign up for a 30-day trial and try building this out on our Sandbox. This provides you with the easiest path to being ready for HIPAA compliance with one more simple deploy.
+If you don't, you can sign up for a 30-day trial and try building this out on our Sandbox. This provides you with the easiest path to being ready for HIPAA compliance with one more simple deploy. Contact sales@catalyze.io to find out more.
 
-*You have an existing Python project, with requirements using pip and setup tools*
+***You have an existing Python project, with requirements using pip and setup tools***
 
 If you don’t, we have a sample app that you can use as a starting point: https://github.com/catalyzeio/python-sample-app. Though, if you are new to Django, we recommending working through the tutorials in their [documentation pages](https://docs.djangoproject.com/en/1.8/).
 
-*You’ve read and understand the documentation for Python 2.7, Django and Postgres.*
+***You’ve read and understand the documentation for Python 2.7, Django and Postgres.***
 
-*You have Python, virtualenv, pip and setuptools installed*
+***You have Python, virtualenv, pip and setuptools installed***
 
 You may want to install Python with brew on OS X: `brew install python`
 
 If you don’t, pip/setuptools are installed with Python: http://docs.python-guide.org/en/latest/starting/install/osx/
 
-*Install the Catalyze PaaS CLI*
+***Install the Catalyze Platform CLI***
 
 If you've already installed pip, installing the CLI is as easy as `pip install catalyze`
 
@@ -142,6 +144,7 @@ Alright, after your build is successful your application is ready to be deployed
 
 > **A note on build failures:**
 Dealing with build failures in the buildpack system can be a little tricky, but it just requires a little patience and soon you'll quickly be able to spot and resolve issues as they arise. When an error occurs in the build process you will often encounter a lengthy stack trace. Glance through the stack trace and look for clues about what went wrong. Oftentimes a dependency fails to build because of an incompatibility with the runtime or the provider where the dependency is hosted is down. If your build process attempts to connect to the database your build may fail. During the build process your application will not have access to the network where the database is running. In rare cases you may need to dig inside the buildpack source to really understand what is happening behind the scenes. Here is a short list of the most common build issues:
+>
 	1. Missing project dependencies in `requirements.txt`
 	2. Forgot to check into your repository a required file
 	3. Broken dependencies
