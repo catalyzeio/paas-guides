@@ -8,8 +8,8 @@ title: Logging Guide
 Logging is an essential part HIPAA compliance, and the following sections of HIPAA apply directly to logging.  
 
 * Section 164.308(a)(5)(ii)(C) “Log-in Monitoring”  calls for monitoring the systems touching patient information for login and access.  The requirement applies to “login attempts” which implies both failed and successful logins.
-* Section 164.312(b)  	“Audit Controls”  broadly covers audit logging and other audit trails on systems that deal with sensitive health information.  Review of such audit logs seem to be implied by this requirement.
-* Section 164.308(a)(1)(ii)(D)  “Information System Activity Review” prescribes review of various records of IT activities such as logs, systems utilization reports,  incident reports and other indications of security relevant activities
+* Section 164.312(b) “Audit Controls”  broadly covers audit logging and other audit trails on systems that deal with sensitive health information. Review of such audit logs seem to be implied by this requirement.
+* Section 164.308(a)(1)(ii)(D) “Information System Activity Review” prescribes review of various records of IT activities such as logs, systems utilization reports,  incident reports and other indications of security relevant activities.
 
 Logging can be easily implemented for any of these configurations; Python + PostgresSQL, Node + MongoDB, PHP + MySQL, and  Ruby + PostgresSQL. (add links to these guides) It is important not only to store logs but to understand how to effectively filter and extract metrics from your logs.  Catalyze uses Elasticsearch, Logstash and Kibana to capture and visualize both application and database logs. More information can be found [here](https://www.elastic.co/).
 
