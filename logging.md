@@ -11,12 +11,12 @@ Logging is an essential part HIPAA compliance, and the following sections of HIP
 * Section 164.312(b) “Audit Controls”  broadly covers audit logging and other audit trails on systems that deal with sensitive health information. Review of such audit logs seem to be implied by this requirement.
 * Section 164.308(a)(1)(ii)(D) “Information System Activity Review” prescribes review of various records of IT activities such as logs, systems utilization reports,  incident reports and other indications of security relevant activities.
 
-Logging can be easily implemented for any of these configurations; Python + PostgresSQL, Node + MongoDB, PHP + MySQL, and  Ruby + PostgresSQL. (add links to these guides) It is important not only to store logs but to understand how to effectively filter and extract metrics from your logs.  Catalyze uses Elasticsearch, Logstash and Kibana to capture and visualize both application and database logs. More information can be found [here](https://www.elastic.co/).
+Logging can be easily implemented for any of these configurations; Python + PostgresSQL, Node + MongoDB, PHP + MySQL, and  Ruby + PostgresSQL. It is important not only to store logs but to understand how to effectively filter and extract metrics from your logs.  Catalyze uses Elasticsearch, Logstash and Kibana to capture and visualize both application and database logs. More information can be found [here](https://www.elastic.co/).
 
 ## Pre-requisites
 You have a PaaS account with Catalyze. If you don't, you can sign up for a 30-day trial [here](https://catalyze.io/signup).
 
-You have a provisioned environment with a deployed application by following one of the following guides. (add links to the guides)
+You have a provisioned environment with a deployed application by following one of the following guides. [Node + MongoDB Guide](https://resources.catalyze.io/paas/paas-guides/node-mongo/), [PHP + MySQL Guide](https://resources.catalyze.io/paas/paas-guides/php-mysql/),  [Rails + Postgres Guide](https://resources.catalyze.io/paas/paas-guides/rails-postgres/).
 
 ## Shipping your application logs
 
