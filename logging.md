@@ -16,11 +16,13 @@ Logging can be easily implemented for any of these configurations; Python + Post
 ## Pre-requisites
 You have a PaaS account with Catalyze. If you don't, you can sign up for a 30-day trial [here](https://catalyze.io/signup).
 
-You have a provisioned environment with a deployed application by following one of the following guides. [Node + MongoDB Guide](https://resources.catalyze.io/paas/paas-guides/node-mongo/), [PHP + MySQL Guide](https://resources.catalyze.io/paas/paas-guides/php-mysql/),  [Rails + Postgres Guide](https://resources.catalyze.io/paas/paas-guides/rails-postgres/).
+You have a provisioned environment with a deployed application by following one of the following guides. [Node + MongoDB Guide](https://resources.catalyze.io/paas/paas-guides/node-mongo/), [PHP + MySQL Guide](https://resources.catalyze.io/paas/paas-guides/php-mysql/),  [Rails + Postgres Guide](https://resources.catalyze.io/paas/paas-guides/rails-postgres/) or [Python + Postgres Guide](https://resources.catalyze.io/paas/paas-guides/python-postgres/).
 
 ## Shipping your application logs
 
 #### Python, PostgresSQL and Django
+See [Python + Postgres Guide](https://resources.catalyze.io/paas/paas-guides/python-postgres/).
+
 Add this code snippet to settings.py: 
 ```
 #settings.py
