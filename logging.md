@@ -147,4 +147,45 @@ Once you have created a custom dashboard and saved it you can set it to be your 
 ## Extracting metrics
 More information about extracting metrics from your logs can be found [here](https://www.elastic.co/guide/index.html).
 
+## Extracting Messages from Elasticsearch
+
+The guides from Elasticsearch will provide the most detail for executing searches with Elasticsearch.  
+
+Using curl and [jq](https://stedolan.github.io/jq/) you can retrieve the syslog messages from Elasticsearch.  The messages are stored as structured data in JSON format.
+
+Elasticsearch can be queried directly by making a request to `https://podhostname/__es`
+
+The index and type of the documents are specified in the path of the uri.
+
+The index name is in the format `logstash-YYYY.MM.DD`.  For example, `logstash-2015.11.09`
+
+The type is "syslog"
+
+To return all the records in Elasticsearch from 2015-11-09, the uril would be `https://podhostname/__es/logstash-2015.11.09/syslog/_search
+
+The request will return a json document.  You can pipe the results through jq to filter the results and only show the syslog message:
+
+`jq '.hits.hits[] | ._source| .syslog_message'`
+
+The full command would be:
+
+`curl -n -s https://podhostname/__es/logstash-2015.11.09/syslog/_search | jq '.hits.hits[] | ._source| .syslog_message'`
+
+Search parameters can be added to a search by including a json document in the request:
+
+Make a file called `es_params.json` to store the parameters of the request:
+
+es_params.json:
+```
+{
+    "query" : {
+        "match" : {
+            "syslog_message" : "Error"
+        }
+    }
+}
+```
+Include the parameters in the request:
+
+`curl -n -s -d @es_params.json https://podhostname/__es/logstash-2015.11.09/syslog/_search | jq '.hits.hits[] | ._source| .syslog_message'`
 
