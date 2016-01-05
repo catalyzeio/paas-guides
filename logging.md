@@ -149,7 +149,7 @@ More information about extracting metrics from your logs can be found [here](htt
 
 ## Extracting Messages from Elasticsearch
 
-The guides from Elasticsearch will provide the most detail for executing searches with Elasticsearch.  
+The guides from [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/1.x/index.html) will provide the most detail for executing searches with Elasticsearch.  
 
 Using curl and [jq](https://stedolan.github.io/jq/) you can retrieve the syslog messages from Elasticsearch.  The messages are stored as structured data in JSON format.
 
