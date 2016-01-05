@@ -161,7 +161,7 @@ The index name is in the format `logstash-YYYY.MM.DD`.  For example, `logstash-2
 
 The type is "syslog"
 
-To return all the records in Elasticsearch from 2015-11-09, the uril would be `https://podhostname/__es/logstash-2015.11.09/syslog/_search
+To return all the records in Elasticsearch from 2015-11-09, the uril would be `https://podhostname/__es/logstash-2015.11.09/syslog/_search`
 
 The request will return a json document.  You can pipe the results through jq to filter the results and only show the syslog message:
 
@@ -189,3 +189,8 @@ Include the parameters in the request:
 
 `curl -n -s -d @es_params.json https://podhostname/__es/logstash-2015.11.09/syslog/_search | jq '.hits.hits[] | ._source| .syslog_message'`
 
+The results from the request are paginated and by default only 10 results are shown.
+
+Add a `size` query parameter to the uri. Be aware that too many results will sigificantly increase the memory usage of Elasticsearch and negativley impact performance
+
+`curl -n -s -d @es_params.json https://podhostname/__es/logstash-2015.11.09/syslog/_search?size=20 | jq '.hits.hits[] | ._source| .syslog_message'`
