@@ -77,7 +77,7 @@ $ catalyze rake db:setup
 ```
 
 [1]: https://resources.catalyze.io/paas/getting-started/ 	"Onboarding Guide"
-[2]: https://resources.catalyze.io/paas/cli/ 	"CLI Reference"
+[2]: https://resources.catalyze.io/paas/paas-cli-reference 	"CLI Reference"
 [3]: https://github.com/catalyzeio/ruby-example-app 	"Ruby Example App"
 [4]: https://catalyze.io/signup/paas 	"Free Trial"
 [5]: https://resources.catalyze.io/paas/guides/logging "Logging"

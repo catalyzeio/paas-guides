@@ -142,7 +142,7 @@ Once your environment has been provisioned the process is a little different. On
 ---
 
 #### Catalyze CLI
-The [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) makes it pretty straight forward for updating environment variables. Just change into the local directory of your project and use the following commands. For more information on using the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli), head over to the [documentation](https://resources.catalyze.io/paas/cli/sections/vars/).
+The [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli) makes it pretty straight forward for updating environment variables. Just change into the local directory of your project and use the following commands. For more information on using the [Catalyze CLI](https://github.com/catalyzeio/catalyze-paas-cli), head over to the [documentation](https://resources.catalyze.io/paas/paas-cli-reference/vars/).
 
 #### List all Variables
 `catalyze vars list`
