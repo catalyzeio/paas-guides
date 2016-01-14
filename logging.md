@@ -170,7 +170,7 @@ Example:
 
 ~/.netrc:
 ```
-machine pod09999.catlayzeapps.com
+machine pod09999.catalyzeapps.com
   login jamesbrown
   password ifeelgood
 ```
