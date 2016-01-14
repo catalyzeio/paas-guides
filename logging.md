@@ -151,7 +151,7 @@ More information about extracting metrics from your logs can be found [here](htt
 
 The guides from [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/1.x/index.html) will provide the most detail for executing searches with Elasticsearch.  
 
-Using curl and [jq](https://stedolan.github.io/jq/) you can retrieve the syslog messages from Elasticsearch.  The messages are stored as structured data in JSON format.
+Using curl and [jq](https://stedolan.github.io/jq/) you can retrieve and filter the syslog messages from Elasticsearch.  The messages are stored as structured data in JSON format.
 
 Elasticsearch can be queried directly by making a request to `https://podhostname/__es`
 
