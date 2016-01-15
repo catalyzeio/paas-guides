@@ -23,7 +23,8 @@ You have a provisioned environment with a deployed application by following one 
 #### Python, PostgresSQL and Django
 See [Python + Postgres Guide](https://resources.catalyze.io/paas/paas-guides/python-postgres/).
 
-Add this code snippet to settings.py: 
+Add this code snippet to settings.py:
+
 ```
 #settings.py
 LOGGING = {
@@ -37,6 +38,7 @@ LOGGING = {
     },
 }
 ```
+
 #### Node and MongoDB
 See [Node + MongoDB Guide](https://resources.catalyze.io/paas/paas-guides/node-mongo/). 
 
