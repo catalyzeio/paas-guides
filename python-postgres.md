@@ -153,6 +153,30 @@ Dealing with build failures in the buildpack system can be a little tricky, but 
 	2. Forgot to check into your repository a required file
 	3. Broken dependencies
 
+## Security & SSL
+
+The [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.9/ref/settings/#allowed-hosts) settings indicates which hostnames Django is allowed serve. You should list the domain(s) your application runs on, as well as the the hostname of your Catalyze proxy:
+
+```python
+ALLOWED_HOSTS = [
+    'api.example.com',
+    'pod0XXXX.catalyzeapps.com',
+]
+```
+
+Catalyze automatically forces all requesets to SSL, but it's good practice to enforce SSL conformance at all layers, including the application layer. Django provides several settings which make it easy to force SSL.
+
+However, because Catalyze proxies requests to Django over HTTP rather than HTTPS, all incoming requests to Django will _appear_ to be non-SSL (even though they originally _were_ SSL). To fix this, we can use the [`SECURE_PROXY_SSL_HEADER`](https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-SECURE_PROXY_SSL_HEADER) setting, which tells Django that when the `HTTP_X_FORWARDED_PROTO` header is equal to `"https"` (set by Catalyze's proxies) then Django should consider the request as SSL.
+
+```python
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+```
+
+It is recommended you review Django's documentation on [Settings](https://docs.djangoproject.com/en/1.9/ref/settings/) and [Security](https://docs.djangoproject.com/en/1.9/topics/security/).
+
 ## Now What?
 Now that your application has been deployed a good place to start is by checking out the application logs. You can log onto the logging server by pointing your browser at the `/logging/` endpoint from your environment's Catalyze domain name (remember to include the trailing slash, its important). You will be prompted to log in, the credentials are the same as logging into the Catalyze Dashboard. Each user who has access to view the Environment on the Dashboard will also be able to access the logging server. You can add additional users to the environment via the CLI. Through the interface you can view and filter logs from the various sources throughout your environment be it the database, cache, or application. The logging server is built atop the ELK (Elasticsearch, Logstash, and Kibana) stack and incorporates many powerful features. Checkout out our guide on managing logs in your environment.
 
