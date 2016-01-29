@@ -155,7 +155,7 @@ Dealing with build failures in the buildpack system can be a little tricky, but 
 
 ## Security & SSL
 
-The [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.9/ref/settings/#allowed-hosts) settings indicates which hostnames Django is allowed serve. You should list the domain(s) your application runs on, as well as the the hostname of your Catalyze proxy:
+The [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.9/ref/settings/#allowed-hosts) settings indicates which hostnames Django is allowed to serve. You should list the domain(s) your application runs on, as well as the the hostname of your Catalyze proxy:
 
 ```python
 ALLOWED_HOSTS = [
